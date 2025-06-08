@@ -28,6 +28,7 @@ pip install -e .
 You can run a pretrained in-hand reorienation policy to check your install. To deploy this policy on the real hand, see the real-world deployment section below. 
 ```
 cd leapsim
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/$USER/miniconda3/envs/leapsim/lib
 python3 train.py wandb_activate=false num_envs=1 headless=false test=true task=LeapHandRot checkpoint=runs/pretrained/nn/LeapHand.pth
 ```
 ![sim-deployment](docs/images/sim.gif)
